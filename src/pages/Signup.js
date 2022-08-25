@@ -57,10 +57,9 @@ function Signup() {
         setColorBg("bg-green-500");
         setsignupSuccess(true);
 
-        setTimeout(()=>{
+        setTimeout(() => {
           setRedirect(true);
-        },4000);
-
+        }, 4000);
       } else {
         setLoad(false);
         setColorCircle("slate-900");
@@ -104,7 +103,7 @@ function Signup() {
         </div>
         {redirect ? (
           <>
-            <div>Account Created Logging You in . . . . </div>
+            <div className="text-slate-800 text-sm font-semibold">Account Created Logging You in . . . . </div>
             <LineWave
               height="100"
               width="100"
