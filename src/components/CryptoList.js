@@ -25,7 +25,7 @@ function CryptoList() {
           <div className="flex flex-row justify-between items-center">
             <div className="icon px-2">Logo</div>
             <div className="pl-3">
-              <div className="text-xl">BTC</div>
+              <div className="text-xl">BT</div>
               <div className="text-sm">Bitcoin</div>
             </div>
           </div>
