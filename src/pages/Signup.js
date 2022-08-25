@@ -102,8 +102,8 @@ function Signup() {
           )}
         </div>
         {redirect ? (
-          <>
-            <div className="text-slate-800 text-sm font-semibold">Account Created Logging You in . . . . </div>
+          <div className="flex flex-col justify-center items-center gap-5">
+            <div className="text-slate-800 text-lg font-bold">Account Created Logging You in . . . . </div>
             <LineWave
               height="100"
               width="100"
@@ -116,7 +116,7 @@ function Signup() {
               middleLineColor=""
               lastLineColor=""
             />
-          </>
+          </div>
         ) : (
           <>
             <h1 className="text-slate-900 text-4xl font-semibold pb-5">
