@@ -1,4 +1,4 @@
-import useState, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { CryptoData } from "../utils/cryptodata";
 
 function CryptoList() {

@@ -5,7 +5,7 @@ import { loginSchema } from "../validation/ClientValid";
 import { ToastContainer, toast } from "react-toastify";
 import { handleLogin } from "../utils/api";
 import "react-toastify/dist/ReactToastify.css";
-import endpoints from "../utils/constant";
+import Constants from "../utils/constant";
 
 import { ThreeDots } from "react-loader-spinner";
 
@@ -17,8 +17,8 @@ function Login() {
   const [colorBg, setColorBg] = useState("bg-slate-900");
   const [load, setLoad] = useState(false);
   const [loginSuccess, setLoginSuccess] = useState(false);
-
-  const loginUrl = process.env.REACT_APP_AUTHURL + endpoints.login;
+  
+  const loginUrl = process.env.REACT_APP_AUTHURL + Constants.endpoints.login;
 
   const handleError = (message) => {
     toast.error(message, {

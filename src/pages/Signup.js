@@ -5,7 +5,8 @@ import { signupSchema } from "../validation/ClientValid";
 import { ToastContainer, toast } from "react-toastify";
 import { handleSignup } from "../utils/api";
 import "react-toastify/dist/ReactToastify.css";
-import endpoints from "../utils/constant";
+
+import Constants from "../utils/constant";
 
 import { ThreeDots } from "react-loader-spinner";
 import { LineWave } from "react-loader-spinner";
@@ -20,7 +21,7 @@ function Signup() {
   const [signupSuccess, setsignupSuccess] = useState(false);
   const [redirect, setRedirect] = useState(false);
 
-  const signupUrl = process.env.REACT_APP_AUTHURL + endpoints.signup;
+  const signupUrl = process.env.REACT_APP_AUTHURL + Constants.endpoints.signup;
 
   const handleError = (message) => {
     toast.error(message, {
