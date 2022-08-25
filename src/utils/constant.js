@@ -8,5 +8,5 @@ const apiEndpoints={
     "metadeta":"/info?"
 }
 
-module.exports=endpoints;
-module.exports=apiEndpoints;
+module.exports.endpoints=endpoints;
+module.exports.apiEndpoints=apiEndpoints;

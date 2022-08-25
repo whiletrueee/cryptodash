@@ -1,8 +1,8 @@
 import { cryptoList } from "./api";
-import apiEndpoints from "./constant";
+import Constants from "./constant";
 
 export const CryptoData = async ()=>{
-    const apilist = process.env.REACT_APP_APIURLV1+apiEndpoints.list;
+    const apilist = process.env.REACT_APP_APIURLV1+Constants.apiEndpoints.list;
     const key = process.env.REACT_APP_APIKEY;
     const config={
         header:{
