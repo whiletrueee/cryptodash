@@ -128,12 +128,18 @@ function Login() {
             />
           </div>
           <CButton
-            label={load&&!loginSuccess ? `Fetching User` : loginSuccess ? `Succesfully Logged In` :`Submit`}
+            label={
+              load && !loginSuccess
+                ? `Fetching User`
+                : loginSuccess
+                ? `Succesfully Logged In`
+                : `Submit`
+            }
             textsize="lg"
             py="2"
             btnClick={handleSubmit}
             type="Submit"
-            disable={load&&!loginSuccess ? true : loginSuccess ? true :false}
+            disable={load && !loginSuccess ? true : loginSuccess ? true : false}
           />
         </form>
         <ToastContainer />

@@ -27,6 +27,15 @@ export const handleSignup = async (signupurl,signupdata)=>{
   }
 }
 
+export const cryptoList = async (apiUrl,authKey)=>{
+  try{
+    const res = await axios.get(apiUrl,{},authKey);
+    console.log(res);
+  }catch(err){
+    console.log(err);
+  }
+}
+
 const handleError = (message) => {
     toast.error(message, {
       position: "bottom-center",
