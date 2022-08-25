@@ -4,18 +4,28 @@ import {toast} from "react-toastify";
 export const handleLogin = async (loginurl,logindata) =>{
     try{
         const res = await axios.post(loginurl,logindata);
-        // if(!res.data.success){
-        //     handleError(res.data.message);
-        // }else{
-        //     handleSuccess(res.data.message);
-        // }
-        return res;
+        if(res.status===200){
+          handleSuccess("User Logged in Successfully !");
+          return true;
+        }
     }catch(err){
-        console.log(err);
-        handleError("oops! Something went wrong");
+        handleError(err.response.data);
         return false;
     }
 };
+
+export const handleSignup = async (signupurl,signupdata)=>{
+  try{
+    const res = await axios.post(signupurl,signupdata);
+    if(res.status===201){
+      handleSuccess(res.data);
+      return true;
+    }
+  }catch(err){
+    handleError(err.response.data);
+    return false;
+  }
+}
 
 const handleError = (message) => {
     toast.error(message, {
