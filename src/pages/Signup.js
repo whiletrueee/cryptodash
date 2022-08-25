@@ -37,7 +37,7 @@ function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(email, password);
+    // console.log(email, password);
 
     let signupdata = {
       email: email,
@@ -45,7 +45,7 @@ function Signup() {
     };
 
     const isValid = await signupSchema.isValid(signupdata);
-    console.log(isValid);
+    // console.log(isValid);
 
     if (isValid) {
       setLoad(true);

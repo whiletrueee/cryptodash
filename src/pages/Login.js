@@ -35,7 +35,7 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(email, password);
+    // console.log(email, password);
 
     let logindata = {
       email: email,
@@ -43,7 +43,7 @@ function Login() {
     };
 
     const isValid = await loginSchema.isValid(logindata);
-    console.log(isValid);
+    // console.log(isValid);
 
     if (isValid) {
       setLoad(true);
