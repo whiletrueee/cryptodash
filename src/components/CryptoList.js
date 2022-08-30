@@ -16,7 +16,7 @@ function CryptoList(props) {
           </div>
         </div>
         <div className="pl-1">
-          <div className="text-xl font-semibold text-gray-800">${item.price.USD.price.toFixed(2)}</div>
+          <div className="text-xl font-semibold text-gray-800">${item.price.USD.price.toLocaleString('en-US', {maximumFractionDigits:2})}</div>
           <div className="text-sm text-right">
             {item.category}
           </div>
@@ -26,7 +26,7 @@ function CryptoList(props) {
   });
 
   return (
-    <div className="w-[25%] pl-1 mt-2">
+    <div className="w-[22%] pl-1 mt-2">
       <input
         type="text"
         placeholder="Search"
