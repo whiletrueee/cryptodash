@@ -25,20 +25,32 @@ function BoxOne({data}) {
     }
   });
 
+  let i=0;
+  const tagsListing = data.tags.map((item)=>{
+    if(i<5){
+      i=i+1;
+      return(<div className="bg-gray-200 text-gray-700 text-xs px-3 py-2 rounded-full font-semibold">
+      {item}
+    </div>);
+    }else{
+      return null;
+    }
+  })
+
 
   return (
     <div className="flex flex-col justify-between gap-1">
       <div className="flex flex-row gap-4 items-center">
         <div className="">
           <img
-            className="w-[90%]"
+            className="w-[90%] drop-shadow-lg rounded-full"
             src={`${data.logo}`}
             alt={`${data.slug}`}
           />
         </div>
         <div className="text-4xl font-bold">{data.name}</div>
         <div className="bg-gray-200 text-gray-700 text-sm py-1 px-2 font-medium rounded-lg">
-          BTC
+          {data.symbol}
         </div>
         <div className="p-1 rounded-md border-[0.1rem] border-gray-300">
           <svg
@@ -107,9 +119,11 @@ function BoxOne({data}) {
       <div className="flex flex-col justify-between gap-1 mt-2">
         <div className="">Tags:</div>
         <div className="flex flex-row justify-start gap-[0.2rem]">
-          <div className="bg-gray-200 text-gray-700 text-xs px-3 py-2 rounded-full font-semibold">
-            Mineable
+          {tagsListing}
+          <div className="bg-gray-300 text-gray-700 text-xs px-3 py-2 rounded-full font-semibold hover:cursor-pointer">
+            View all
           </div>
+
         </div>
       </div>
     </div>

@@ -8,42 +8,23 @@ import { useState } from "react";
 function Dashboard() {
   const url = process.env.REACT_APP_DATAURL;
   let number = 1;
-  const [index,setIndex]=useState(1);
-
-  // useEffect(() => {
-  //   if (number > 20 || number < 0) {
-  //     setNumber(1);
-  //   }
-  // }, [number]);
+  const [index, setIndex] = useState(0);
 
   const { data, error, isError, isLoading } = useQuery(["list"], () =>
     CryptoData(url, number)
   );
 
-  if (isLoading) {
-    return (
-      <>
-        <Leftbar number={number} />
-        <div>Loading . . .</div>
-      </>
-    );
-  }
-  if (isError) {
-    return (
-      <>
-        <Leftbar number={number} />
-        <div>{error}</div>
-      </>
-    );
-  }
 
   return (
-    <div className="h-[95%] flex flex-row justify-start gap-5">
-      <>
-        <Leftbar number={number} />
-        <CryptoList data={data} index={setIndex} />
-        <Description data={data} index={index} />
-      </>
+    <div className="h-[98%] flex flex-row justify-start gap-5">
+      <Leftbar number={number} />
+      {!isLoading && (
+        <>
+          <CryptoList data={data} index={setIndex} />
+          <Description data={data} index={index} />
+        </>
+      )}
+      {isError && <div>{error}</div>}
     </div>
   );
 }
