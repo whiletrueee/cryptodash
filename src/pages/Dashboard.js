@@ -8,7 +8,7 @@ import { useState } from "react";
 function Dashboard() {
   const url = process.env.REACT_APP_DATAURL;
   let number = 1;
-  const [index,setIndex]=useState(0);
+  const [index,setIndex]=useState(1);
 
   // useEffect(() => {
   //   if (number > 20 || number < 0) {
