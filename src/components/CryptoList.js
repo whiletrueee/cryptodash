@@ -23,7 +23,7 @@ function CryptoList() {
 
         <div className="flex flex-row justify-between items-center border-b-2 border-b-gray-200 py-4 pr-3 hover:cursor-pointer hover:transition-transform hover:scale-105 hover:ease-in-out hover:border-b-slate-900">
           <div className="flex flex-row justify-between items-center">
-            <div className="icon px-2">Logo</div>
+            <div className="icon px-2"><img className="w-[80%]" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" alt="bitcoin" /></div>
             <div className="pl-3">
               <div className="text-xl">BT</div>
               <div className="text-sm">Bitcoin</div>

@@ -4,7 +4,7 @@ import Leftbar from "../components/Leftbar";
 
 function Dashboard(){
     return(
-        <div className="h-[95%] flex flex-row justify-start">
+        <div className="h-[95%] flex flex-row justify-start gap-5">
           <Leftbar />
           <CryptoList />
           <Description />
