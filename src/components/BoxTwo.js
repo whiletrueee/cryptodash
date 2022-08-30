@@ -1,6 +1,6 @@
 import Info from "../svg/info";
 
-function BoxTwo() {
+function BoxTwo({data}) {
   return (
     <div className="">
       <div className="">

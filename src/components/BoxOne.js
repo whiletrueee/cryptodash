@@ -1,15 +1,42 @@
-function BoxOne() {
+function BoxOne({data}) {
+  const urls = Object.entries(data.urls);
+
+  const urlListing = urls.map((item) => {
+    if(item[1].length!==0){
+      return(<a href={`${item[1][0]}`} target="_blank" rel="noopener noreferrer"><div className="font-medium text-sm flex flex-row justify-between items-center gap-2 bg-blue-100 text-blue-600 px-3 py-1 rounded-md hover:cursor-pointer hover:transition-transform hover:scale-105 hover:ease-in-out hover:text-blue-900">
+      {item[0]} Url
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.7}
+        stroke="currentColor"
+        className="w-4 h-4 text-blue-900 bg-blue-100"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+        />
+      </svg>
+    </div></a>);
+    }else{
+      return null;
+    }
+  });
+
+
   return (
     <div className="flex flex-col justify-between gap-1">
       <div className="flex flex-row gap-4 items-center">
         <div className="">
           <img
             className="w-[90%]"
-            src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
-            alt="Bitcoin"
+            src={`${data.logo}`}
+            alt={`${data.slug}`}
           />
         </div>
-        <div className="text-4xl font-bold">Bitcoin</div>
+        <div className="text-4xl font-bold">{data.name}</div>
         <div className="bg-gray-200 text-gray-700 text-sm py-1 px-2 font-medium rounded-lg">
           BTC
         </div>
@@ -32,13 +59,13 @@ function BoxOne() {
       </div>
       <div className="flex flex-row flex-wrap justify-start gap-2 mt-1">
         <div className="bg-gray-500 text-gray-100 px-2 py-1 rounded-md text-sm">
-          Rank #1
+          Rank #{data.rank}
         </div>
         <div className="bg-gray-200 text-gray-600 px-3 py-1 rounded-md">
-          Coin
+          {data.category}
         </div>
 
-        <div className="font-semibold flex flex-row justify-between items-center gap-2 bg-blue-200 text-blue-600 px-3 py-1 rounded-md hover:cursor-pointer hover:transition-transform hover:scale-105 hover:ease-in-out hover:text-blue-900">
+        {/* <div className="font-semibold flex flex-row justify-between items-center gap-2 bg-blue-200 text-blue-600 px-3 py-1 rounded-md hover:cursor-pointer hover:transition-transform hover:scale-105 hover:ease-in-out hover:text-blue-900">
           Website Url
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -72,17 +99,11 @@ function BoxOne() {
               d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
             />
           </svg>
-        </div>
-
-        
-
-        
-
-        
-
-        
+        </div> */}
+        {urlListing}
 
       </div>
+
       <div className="flex flex-col justify-between gap-1 mt-2">
         <div className="">Tags:</div>
         <div className="flex flex-row justify-start gap-[0.2rem]">

@@ -1,4 +1,4 @@
-function ArrowUp() {
+function ArrowUp(props) {
   return (
     <>
       <svg
@@ -6,6 +6,7 @@ function ArrowUp() {
         viewBox="0 0 24 24"
         fill="currentColor"
         className="w-10 h-10 p-2 text-white hover:bg-slate-800 rounded-full hover:cursor-pointer"
+        onClick={()=>{props.increment()}}
       >
         <path
           fillRule="evenodd"
