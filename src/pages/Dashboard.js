@@ -4,6 +4,7 @@ import Leftbar from "../components/Leftbar";
 import { useQuery } from "@tanstack/react-query";
 import { CryptoData } from "../utils/cryptodata";
 import { useState } from "react";
+import CryptoListLoader from "../loader/cryptolistLoader";
 
 function Dashboard() {
   const url = process.env.REACT_APP_DATAURL;
@@ -18,6 +19,7 @@ function Dashboard() {
   return (
     <div className="h-[98%] flex flex-row justify-start gap-5">
       <Leftbar number={number} />
+      {isLoading && <CryptoListLoader />}
       {!isLoading && (
         <>
           <CryptoList data={data} index={setIndex} />
