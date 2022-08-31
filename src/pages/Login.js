@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CButton from "../components/Button";
 import { loginSchema } from "../validation/ClientValid";
 import { ToastContainer, toast } from "react-toastify";
@@ -17,6 +17,7 @@ function Login() {
   const [colorBg, setColorBg] = useState("bg-slate-900");
   const [load, setLoad] = useState(false);
   const [loginSuccess, setLoginSuccess] = useState(false);
+  const navigate = useNavigate();
   
   const loginUrl = process.env.REACT_APP_AUTHURL + Constants.endpoints.login;
 
@@ -54,6 +55,10 @@ function Login() {
         setColorCircle("slate-900");
         setColorBorder("border-green-500");
         setColorBg("bg-green-500");
+
+        setTimeout(()=>{
+          navigate("/");
+        },4000);
       } else {
         setLoad(false);
         setColorCircle("slate-900");
@@ -98,7 +103,7 @@ function Login() {
         <h1 className="text-slate-900 text-4xl font-semibold pb-5">Login</h1>
         <form className="flex flex-col mt-5 gap-7 w-[70%]">
           <div className="flex flex-col">
-            <label className="text-xl text-gray-500 pb-2">Email</label>
+            {/* <label className="text-xl text-gray-500 pb-2">Email</label> */}
             <input
               type="text"
               value={email}
@@ -108,12 +113,12 @@ function Login() {
                 setColorBorder("border-slate-900");
                 setColorBg("bg-slate-900");
               }}
-              placeholder="example@mail.com"
+              placeholder="Email"
               className="focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 px-3 py-2 text-gray-500 font-semibold rounded-sm"
             />
           </div>
           <div className="flex flex-col mb-4">
-            <label className="text-xl text-gray-500 pb-2">Password</label>
+            {/* <label className="text-xl text-gray-500 pb-2">Password</label> */}
             <input
               type="password"
               value={password}
@@ -123,7 +128,7 @@ function Login() {
                 setColorBorder("border-slate-900");
                 setColorBg("bg-slate-900");
               }}
-              placeholder="min 6 characters"
+              placeholder="Password(min 6 characters)"
               className="focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 px-3 py-2 text-gray-500 font-semibold rounded-sm"
             />
           </div>
@@ -132,7 +137,7 @@ function Login() {
               load && !loginSuccess
                 ? `Fetching User`
                 : loginSuccess
-                ? `Succesfully Logged In`
+                ? `Logged In | Redirecting`
                 : `Submit`
             }
             textsize="lg"

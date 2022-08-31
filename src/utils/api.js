@@ -4,12 +4,15 @@ import {toast} from "react-toastify";
 export const handleLogin = async (loginurl,logindata) =>{
     try{
         const res = await axios.post(loginurl,logindata);
-        if(res.status===200){
-          handleSuccess("User Logged in Successfully !");
+        console.log(res);
+        if(res.status===201){
+          handleSuccess(res.data.message);
+          localStorage.setItem('token',res.data.token);
           return true;
         }
     }catch(err){
-        handleError(err.response.data);
+      console.log(err);
+        handleError(err.response.data.message);
         return false;
     }
 };
@@ -22,7 +25,7 @@ export const handleSignup = async (signupurl,signupdata)=>{
       return true;
     }
   }catch(err){
-    handleError(err.response.data);
+    handleError(err.response.data.message);
     return false;
   }
 }
