@@ -1,7 +1,7 @@
 function CryptoList(props) {
   const listItems = props.data.map((item) => {
     return (
-      <div className="flex flex-row justify-between items-center border-b-2 lg:border-b-gray-200 py-4 pr-3 hover:cursor-pointer hover:transition-transform hover:scale-105 hover:ease-in-out hover:border-b-slate-900 " onClick={()=>{props.index(item.rank-1)}}>
+      <div className="flex flex-row justify-between items-center border-b-2 lg:border-b-gray-200 py-4 pr-3 hover:cursor-pointer hover:transition-transform hover:scale-105 hover:ease-in-out hover:border-b-slate-900 " onClick={()=>{props.index(item.index)}}>
 
         <div className="flex flex-row justify-start items-center">
           <div className="px-2 w-fit">
