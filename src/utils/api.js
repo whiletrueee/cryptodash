@@ -64,3 +64,8 @@ const handleError = (message) => {
       theme: "colored"
       });
   }
+
+  export const detectLogin = () =>{
+    console.log(localStorage.getItem('token'));
+    return (localStorage.getItem('token'));
+  }
