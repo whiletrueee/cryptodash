@@ -8,17 +8,33 @@ import CryptoListLoader from "../loader/cryptolistLoader";
 
 function Dashboard() {
   const url = process.env.REACT_APP_DATAURL;
-  let number = 1;
   const [index, setIndex] = useState(0);
+  const [number, setNumber] = useState(1);
 
-  const { data, error, isError, isLoading } = useQuery(["list"], () =>
+  const increment = () => {
+    if (number === 5) {
+      setNumber(1);
+    } else {
+      setNumber(number + 1);
+    }
+  };
+  const decrement = () => {
+    if(number===1){
+      setNumber(5);
+    }else{
+      setNumber(number-1);
+    }
+  }
+
+
+  const { data, error, isError, isLoading } = useQuery(["list",number], () =>
     CryptoData(url, number)
   );
 
 
   return (
     <div className="h-[98%] flex flex-row justify-start gap-5">
-      <Leftbar number={number} />
+      <Leftbar number={number} incr={increment} decr={decrement} />
       {isLoading && <CryptoListLoader />}
       {!isLoading && (
         <>

@@ -1,6 +1,7 @@
 import Dashboard from "./Dashboard";
 
-function Home() {
+function Home(props) {
+  props.assignToken();
   return (
     <div className="bg-[#F4F4FA] h-screen md:h-[90vh] flex justify-center items-center px-6 py-5 md:px-12 md:py-10">
       <div className="w-[100%] h-[100%] border-black border-4 rounded-2xl bg-[#F4F4FA] shadow-slate-400 shadow-2xl relative flex flex-col justify-center">

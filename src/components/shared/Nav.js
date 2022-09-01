@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
+
 import CButton from "../Button";
 
-function Navbar() {
-  const getToken=false;
+function Navbar(props) {
   const logout = () => {
     localStorage.clear();
     window.location.reload();
@@ -21,7 +21,7 @@ function Navbar() {
           </div>
         </div>
         <div className="buttons flex-row justify-around items-centers">
-          {getToken ? (
+          {props.token ? (
             <CButton label="Logout" textsize="md" py="1" btnClick={logout} />
           ) : (
             <>
