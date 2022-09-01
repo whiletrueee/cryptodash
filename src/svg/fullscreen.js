@@ -39,7 +39,7 @@ function Fullscreen() {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-10 h-10 text-white p-2 hover:bg-slate-800 rounded-full hover:cursor-pointer"
+            className="w-10 h-10 p-2 text-slate-400 hover:text-slate-200 hover:bg-slate-800 rounded-full hover:cursor-pointer"
             onClick={() => {
               closefullscreen();
               setFulls(false);
@@ -58,7 +58,7 @@ function Fullscreen() {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            className="w-10 h-10 text-white p-2 hover:bg-slate-800 rounded-full hover:cursor-pointer"
+            className="w-10 h-10 p-2 text-slate-400 hover:text-slate-200 hover:bg-slate-800 rounded-full hover:cursor-pointer"
             onClick={() => {
               openfullscreen();
               setFulls(true);

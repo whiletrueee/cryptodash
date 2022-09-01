@@ -58,20 +58,19 @@ function BoxOne({ data }) {
           {data.symbol}
         </div>
         <div className="p-1 rounded-md border-[0.1rem] border-gray-300">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-3 h-3 xl:w-6 xl:h-6 text-gray-500"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"
-            />
-          </svg>
+        <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="w-3 h-3 xl:w-6 xl:h-6 text-gray-400 hover:cursor-pointer"
+    >
+      <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
+      <path
+        fillRule="evenodd"
+        d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z"
+        clipRule="evenodd"
+      />
+    </svg>
         </div>
       </div>
       <div className="flex flex-row flex-wrap justify-start gap-2 mt-1 items-center">
