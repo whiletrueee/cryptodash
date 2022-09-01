@@ -1,11 +1,8 @@
-import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
-import { detectLogin } from "../../utils/api";
+
 import CButton from "../Button";
 
-function Navbar() {
-  
-  const {data}=useQuery(['detectLogin'],()=>detectLogin());
+function Navbar(props) {
   const logout = () => {
     localStorage.clear();
     window.location.reload();
@@ -24,7 +21,7 @@ function Navbar() {
           </div>
         </div>
         <div className="buttons flex-row justify-around items-centers">
-          {data ? (
+          {props.token ? (
             <CButton label="Logout" textsize="md" py="1" btnClick={logout} />
           ) : (
             <>
