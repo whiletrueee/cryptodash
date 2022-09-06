@@ -1,4 +1,4 @@
-#Crypto Dash
+# Crypto Dash
 
 This is a mock crypto website
 
