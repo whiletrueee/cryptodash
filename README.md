@@ -43,7 +43,7 @@ Create Your data base and add URI string in .env folder to get strated with the 
 
 ## Creators💥
 
-| <p align="center">![Shashank kumar](https://github.com/shawshankkumar.png?size=128)<br>[Shashank Kumar](https://github.com/shawshankkumar)</p> | <p align="center">![Harshit Singh](https://github.com/flying-solo.png?size=128)<br>[Harshit Singh](https://github.com/flying-solo)</p> |
+| <p align="center">![Shashank kumar](https://github.com/shawshankkumar.png?size=128)<br>[Shashank Kumar](https://github.com/shawshankkumar)</p> | <p align="center">![Harshit Singh](https://github.com/whiletrueee.png?size=128)<br>[Harshit Singh](https://github.com/whiletrueee)</p> |
 | ---------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 
 [Shashank's twitter handle](https://twitter.com/Ka_redemption)
@@ -52,7 +52,7 @@ Create Your data base and add URI string in .env folder to get strated with the 
 <br>
 [Harshit's twitter handle](https://twitter.com/singharshit07)
 <br>
-[Harshit's github profile](https://github.com/flying-solo)
+[Harshit's github profile](https://github.com/whiletrueee)
 
 <br>
 ## License 📜
